@@ -7,12 +7,9 @@ export default {
   name: 'PrismicText',
   props: {
     text: {
-      type: Object,
+      type: Array,
       default: () => {
-        return {
-          alt: '',
-          url: ''
-        }
+        return null
       }
     }
   }
