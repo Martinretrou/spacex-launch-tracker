@@ -2,6 +2,8 @@
   <div class="textarea-group form-group">
     <label :for="name">{{ label }}</label>
     <textarea
+      :value="value"
+      v-on:input="updateValue($event.target.value)"
       :name="name"
       :rows="rows"
       :cols="cols"
@@ -14,6 +16,10 @@
 export default {
   name: 'Textare',
   props: {
+    value: {
+      type: String,
+      default: null
+    },
     name: {
       type: String,
       required: true,
@@ -34,6 +40,11 @@ export default {
     placeholder: {
       type: String,
       default: 'Enter text here...'
+    }
+  },
+  methods: {
+    updateValue(value) {
+      this.$emit('input', value)
     }
   }
 }

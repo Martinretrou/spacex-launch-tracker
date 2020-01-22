@@ -1,7 +1,13 @@
 <template>
   <div class="input-group form-group">
     <label :for="name">{{ label }}</label>
-    <input :name="name" :type="type" :placeholder="placeholder" />
+    <input
+      :value="value"
+      v-on:input="updateValue($event.target.value)"
+      :name="name"
+      :type="type"
+      :placeholder="placeholder"
+    />
   </div>
 </template>
 
@@ -9,6 +15,10 @@
 export default {
   name: 'Input',
   props: {
+    value: {
+      type: String,
+      default: null
+    },
     name: {
       type: String,
       required: true,
@@ -25,6 +35,11 @@ export default {
     placeholder: {
       type: String,
       default: 'Enter text here...'
+    }
+  },
+  methods: {
+    updateValue(value) {
+      this.$emit('input', value)
     }
   }
 }

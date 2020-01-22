@@ -21,7 +21,6 @@ $ yarn generate
 
 ## To do
 
-- [ ] Add dynamic page example
 - [ ] Add more form components
 - [ ] Add more shared components
 - [ ] Add nuxt link example

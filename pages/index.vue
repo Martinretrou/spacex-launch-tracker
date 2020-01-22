@@ -2,8 +2,12 @@
   <div v-if="document">
     <hero />
     <prismic-img :img="document.data.hero_image" />
-    <app-input label="Input label" name="input-test" />
-    <app-textarea label="Textarea label" name="textarea-test" />
+    <app-input v-model="textValue" label="Input label" name="input-test" />
+    <app-textarea
+      v-model="textareaValue"
+      label="Textarea label"
+      name="textarea-test"
+    />
   </div>
 </template>
 
@@ -19,6 +23,12 @@ export default {
     PrismicImg,
     'app-input': Input,
     'app-textarea': Textarea
+  },
+  data() {
+    return {
+      textValue: null,
+      textareaValue: null
+    }
   },
   async asyncData({ $prismic, error }) {
     // Get single document from prismic before page is sent to client
