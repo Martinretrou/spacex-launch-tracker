@@ -1,28 +1,21 @@
 <template>
   <div v-if="document">
-    <hero />
-    <prismic-img :img="document.data.hero_image" />
-    <app-input v-model="textValue" label="Input label" name="input-test" />
-    <app-textarea
-      v-model="textareaValue"
-      label="Textarea label"
-      name="textarea-test"
+    <hero
+      :title="document.data.hero_title[0].text"
+      :description="document.data.hero_description[0].text"
     />
+    <available-components :data="document.data" />
   </div>
 </template>
 
 <script>
 import Hero from '~/components/sections/Hero.vue'
-import PrismicImg from '~/components/shared/PrismicImg.vue'
-import Input from '~/components/form/Input.vue'
-import Textarea from '~/components/form/Textarea.vue'
+import AvailableComponents from '~/components/sections/AvailableComponents.vue'
 
 export default {
   components: {
     Hero,
-    PrismicImg,
-    'app-input': Input,
-    'app-textarea': Textarea
+    AvailableComponents
   },
   data() {
     return {
