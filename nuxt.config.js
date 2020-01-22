@@ -48,6 +48,15 @@ export default {
     '@nuxtjs/prismic'
   ],
   /*
+   ** PWA settings
+   */
+  pwa: {
+    manifest: {
+      name: 'hw-nuxtjs-prismic',
+      lang: 'en'
+    }
+  },
+  /*
    ** Prismic settings
    */
   prismic: {

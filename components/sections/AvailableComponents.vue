@@ -38,10 +38,16 @@
         Checkboxes component
       </p>
       <app-checkbox
-        @on-change="logCheckboxChanges($event)"
+        @on-change="logChanges($event)"
         v-model="checked"
         :options="checkboxesOptions"
       />
+    </div>
+    <div class="two-cols">
+      <p>
+        Select component
+      </p>
+      <app-select @input="logChanges($event)" :options="selectOptions" />
     </div>
   </section>
 </template>
@@ -54,6 +60,7 @@ import PrismicText from '~/components/shared/PrismicText.vue'
 import Input from '~/components/form/Input.vue'
 import Textarea from '~/components/form/Textarea.vue'
 import Checkbox from '~/components/form/Checkbox.vue'
+import Select from '~/components/form/Select.vue'
 
 export default {
   name: 'AvailableComponents',
@@ -62,7 +69,8 @@ export default {
     PrismicText,
     'app-checkbox': Checkbox,
     'app-input': Input,
-    'app-textarea': Textarea
+    'app-textarea': Textarea,
+    'app-select': Select
   },
   props: {
     data: {
@@ -81,11 +89,16 @@ export default {
         { value: 'Value test 1', label: 'Label test 1', name: 'checkbox-test' },
         { value: 'Value test 2', label: 'Label test 2', name: 'checkbox-test' },
         { value: 'Value test 3', label: 'Label test 3', name: 'checkbox-test' }
+      ],
+      selectOptions: [
+        { value: 'Value test 1', label: 'Label test 1' },
+        { value: 'Value test 2', label: 'Label test 2' },
+        { value: 'Value test 3', label: 'Label test 3' }
       ]
     }
   },
   methods: {
-    logCheckboxChanges(event) {
+    logChanges(event) {
       console.log(event)
     }
   }
