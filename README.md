@@ -1,4 +1,4 @@
-# hw-nuxt-prismic
+# spacex-launch-tracker
 
 > Nuxt.js + Prismic + PWA
 
@@ -18,14 +18,5 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-## To do
-
-- [ ] Add more form components
-- [ ] Add more shared components
-- [ ] Add nuxt link example
-- [ ] Better props typing
-- [ ] Add minimal styling
-- [ ] Deploy on heroku
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

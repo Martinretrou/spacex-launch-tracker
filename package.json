@@ -1,5 +1,5 @@
 {
-  "name": "hw-nuxt-prismic",
+  "name": "spacex-launch-tracker",
   "version": "1.0.0",
   "description": "Nuxt.js + Prismic + PWA",
   "author": "Martin Retrou",
@@ -9,7 +9,10 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy:gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"
@@ -30,6 +33,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/moment": "^1.6.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -39,6 +43,7 @@
     "lint-staged": "^8.2.1",
     "node-sass": "^4.13.1",
     "prettier": "^1.16.4",
+    "push-dir": "^0.4.1",
     "sass-loader": "^8.0.2"
   }
 }

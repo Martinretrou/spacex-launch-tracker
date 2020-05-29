@@ -1,6 +1,9 @@
 html,
 body {
   margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: $bg;
+  overflow-x: hidden;
 }
 
 section {
@@ -11,5 +14,53 @@ section {
 .prismic-rich-field {
   img {
     max-width: 100%;
+  }
+}
+
+.section {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  padding: 30px;
+  color: $white;
+  &::before {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: $white;
+    left: 25px;
+    top: 0;
+    opacity: 0.1;
+    z-index: 10;
+  }
+  &::after {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: $white;
+    right: 25px;
+    top: 0;
+    opacity: 0.1;
+    z-index: 10;
+  }
+}
+
+.btn {
+  width: 200px;
+  padding: 10px 20px;
+  min-height: 30px;
+  border: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: center;
+}
+
+.ghost {
+  &-white {
+    background-color: transparent;
+    border: 1px solid black;
+    border-color: $white;
+    color: $white;
   }
 }
