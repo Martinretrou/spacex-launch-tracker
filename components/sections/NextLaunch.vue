@@ -39,7 +39,8 @@
     </div>
     <div
       :style="{
-        'background-image': 'url(' + require('~/assets/img/hero_2.webp') + ')'
+        'background-image':
+          'url(' + require('~/assets/img/png/hero_bg.png') + ')'
       }"
       class="img"
     ></div>
