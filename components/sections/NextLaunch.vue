@@ -116,7 +116,7 @@ export default {
     background: linear-gradient(
       0deg,
       rgba(0, 0, 0, 1) 0%,
-      rgba(40, 239, 239, 0) 100%
+      rgba(0, 0, 0, 0) 100%
     );
     z-index: 3;
   }
