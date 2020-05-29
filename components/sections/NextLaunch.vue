@@ -7,6 +7,7 @@
           v-if="launch.links.mission_patch"
           :src="launch.links.mission_patch"
           class="launch-badge"
+          alt="Mission badge"
         />
 
         <p class="launch-name">
@@ -63,7 +64,7 @@ export default {
 .next-launch {
   position: relative;
   padding: 0;
-  height: 90vh;
+  height: 100vh;
   background-size: cover;
   display: flex;
   justify-content: space-evenly;
@@ -78,15 +79,17 @@ export default {
     z-index: 2;
   }
   .ctas {
+    position: relative;
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+    z-index: 4;
     a + a {
       margin-top: 15px;
     }
   }
   .img {
-    margin-top: -10vh;
+    margin-top: 0vh;
     z-index: 1;
     width: 100vw;
     height: 100vh;
